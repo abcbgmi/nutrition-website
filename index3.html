@@ -2,516 +2,541 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthyLife Nutrition - Qualified Nutritional Therapist</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dr. Dhara Lakhani - Ayurvedic Doctor & Diet Consultant</title>
+
     <style>
+        :root {
+            --green: #3d8361;
+            --green-dark: #2e654b;
+            --muted: #f5fbf6;
+            --bg: #ffffff;
+            --text: #333;
+            --card-shadow: 0 8px 30px rgba(18, 40, 18, 0.06);
+            --transition: 300ms cubic-bezier(.2, .9, .3, 1);
+            --rounded: 14px;
+        }
+
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            line-height: 1.6;
-            background-color: #fff;
+            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
-            width: 90%;
+            width: 92%;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Header Styles */
         header {
-            background-color: #fff;
-            padding: 15px 0;
-            border-bottom: 2px solid #f0f0f0;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1100;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.95));
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            backdrop-filter: blur(4px);
         }
 
-        .header-content {
+        .header-inner {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
         }
 
         .logo {
-            color: #3d8361;
-            font-size: 1.8rem;
-            font-weight: bold;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            color: var(--green);
+            font-weight: 700;
+            font-size: 1.25rem
         }
 
-        .logo::before {
-            content: "🌿";
-            font-size: 2rem;
+        .logo .l1 {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
         }
 
-        .navbar ul {
+        nav ul {
             display: flex;
-            list-style: none;
-            gap: 30px;
+            gap: 20px;
+            list-style: none
         }
 
-        .navbar a {
+        nav a {
+            color: var(--text);
             text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-            padding: 5px 0;
-            position: relative;
+            font-weight: 600;
+            padding: 8px;
+            border-radius: 8px;
+            transition: all var(--transition)
         }
 
-        .navbar a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #3d8361;
-            transition: width 0.3s;
-        }
-
-        .navbar a:hover::after {
-            width: 100%;
-        }
-
-        .navbar a:hover {
-            color: #3d8361;
+        nav a:hover,
+        nav a:focus {
+            color: var(--green);
+            outline: none;
+            background: rgba(61, 131, 97, 0.06)
         }
 
         .menu-toggle {
             display: none;
             flex-direction: column;
-            cursor: pointer;
             gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
         }
 
         .menu-toggle span {
-            width: 25px;
+            width: 26px;
             height: 3px;
-            background-color: #3d8361;
-            transition: 0.3s;
+            background: var(--green);
+            border-radius: 4px;
+            display: block
         }
 
-        /* Hero Section */
         .hero {
+            background: linear-gradient(135deg, #f7fcf9 0%, #eef8ee 100%);
+            padding: 72px 0 56px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f5fbf6 0%, #e8f5e9 100%);
-            min-height: 600px;
+            min-height: 520px;
         }
 
-        .hero-content {
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 460px;
+            gap: 48px;
+            align-items: center
+        }
+
+        .hero-title {
+            color: var(--green);
+            font-size: 2.4rem;
+            line-height: 1.1;
+            margin-bottom: 16px
+        }
+
+        .hero-sub {
+            color: #4b5650;
+            font-size: 1.05rem;
+            margin-bottom: 22px
+        }
+
+        .badges {
             display: flex;
-            align-items: center;
-            gap: 60px;
             flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 22px
         }
 
-        .hero-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .hero-text h2 {
-            color: #3d8361;
-            font-size: 3rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: #555;
-        }
-
-        .hero-image {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-image-placeholder {
-            width: 100%;
-            max-width: 500px;
-            height: 400px;
-            background: linear-gradient(135deg, #81c784 0%, #66bb6a 100%);
+        .badge {
+            background: #fff;
+            padding: 8px 14px;
             border-radius: 20px;
-            display: flex;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            box-shadow: 0 10px 30px rgba(61, 131, 97, 0.3);
+            gap: 6px
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
         }
 
         .btn {
-            display: inline-block;
-            background-color: #3d8361;
+            background: var(--green);
             color: #fff;
-            padding: 15px 35px;
+            padding: 12px 29px;
             border-radius: 30px;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-weight: 600;
             border: none;
+            font-weight: 700;
+            text-decoration: none;
             cursor: pointer;
-            font-size: 1rem;
+            transition: all var(--transition);
+            display: inline-block;
+        }
+
+        #btn1 {
+            padding: 16px 19px;
+            width: 100%;
+        }
+
+        .btn.secondary {
+            background: transparent;
+            color: var(--green);
+            border: 2px solid var(--green);
+        }
+
+        .btn.whatsapp {
+            background: #25D366;
+            color: #fff;
         }
 
         .btn:hover {
-            background-color: #2e654b;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(61, 131, 97, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(61, 131, 97, 0.12)
         }
 
-        /* Stats Section */
+        .ribbon {
+            font-size: 0.9rem;
+            color: #4b5650;
+            margin-top: 12px;
+        }
+
+        .hero-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            display: block
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            max-height: 420px
+        }
+
         .stats {
-            background-color: #3d8361;
+            background: var(--green);
             color: #fff;
-            padding: 60px 0;
+            padding: 40px 0;
+            margin-top: -10px;
+            border-radius: 14px
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
             text-align: center;
+            max-width: 1200px;
+            margin: 0 auto
         }
 
         .stat-item h3 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 6px
         }
 
         .stat-item p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+            opacity: 0.95
         }
 
-        /* About Section */
-        .about {
-            padding: 100px 0;
+        section {
+            padding: 84px 0
         }
 
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            flex-wrap: wrap;
+        h2.section-title {
+            color: var(--green);
+            font-size: 2rem;
+            margin-bottom: 18px
         }
 
-        .about-image {
-            flex: 1;
-            min-width: 300px;
+        .about-grid {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 36px;
+            align-items: center
         }
 
-        .about-img-placeholder {
+        .about-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow)
+        }
+
+        .about-card img {
             width: 100%;
-            max-width: 450px;
-            height: 400px;
-            background: linear-gradient(135deg, #a5d6a7 0%, #81c784 100%);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .about-text h2 {
-            color: #3d8361;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            height: 100%;
+            object-fit: cover;
+            display: block
         }
 
         .about-text p {
-            margin-bottom: 15px;
-            color: #555;
-            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #4b5650;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         .certifications {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #f5fbf6;
+            margin-top: 14px;
+            padding: 14px;
+            background: #f8fff8;
             border-radius: 10px;
+            border: 1px solid rgba(61, 131, 97, 0.06)
         }
 
         .certifications h4 {
-            color: #3d8361;
-            margin-bottom: 10px;
+            color: var(--green);
+            margin-bottom: 8px;
         }
 
         .certifications ul {
             list-style: none;
             padding-left: 0;
+            color: #355141
         }
 
         .certifications li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .certifications li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #3d8361;
-            font-weight: bold;
-        }
-
-        /* Services Section */
-        .services {
-            background-color: #f5fbf6;
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .services h2 {
-            font-size: 2.5rem;
-            color: #3d8361;
-            margin-bottom: 50px;
+            margin-bottom: 4px;
         }
 
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 18px
         }
 
         .service-card {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
+            background: #fff;
+            border-radius: 12px;
+            padding: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            transition: transform var(--transition), box-shadow var(--transition);
+            overflow: hidden;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.09)
         }
 
-        .service-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-card-content {
+            padding: 18px;
         }
 
         .service-card h3 {
-            color: #3d8361;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
+            color: var(--green);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
         }
 
         .service-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Process Section */
-        .process {
-            padding: 100px 0;
-        }
-
-        .process h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #3d8361;
-            margin-bottom: 60px;
+            margin-bottom: 12px;
+            color: #4b5650;
         }
 
         .process-steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 18px
         }
 
         .process-step {
+            background: linear-gradient(180deg, #fff, #fbfffb);
+            padding: 24px 18px;
+            border-radius: 12px;
             text-align: center;
-            padding: 30px;
-            position: relative;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04)
         }
 
         .step-number {
-            width: 60px;
-            height: 60px;
-            background-color: #3d8361;
+            width: 56px;
+            height: 56px;
+            background: var(--green);
             color: #fff;
             border-radius: 50%;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
+            font-weight: 700;
+            margin-bottom: 12px;
             font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 20px;
         }
 
-        .process-step h3 {
-            color: #3d8361;
-            margin-bottom: 10px;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            padding: 100px 0;
-            background-color: #f5fbf6;
-            text-align: center;
-        }
-
-        .testimonials h2 {
-            font-size: 2.5rem;
-            color: #3d8361;
-            margin-bottom: 50px;
+        .process-step h4 {
+            color: var(--green);
+            margin-bottom: 8px;
         }
 
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 22px
         }
 
         .testimonial {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            text-align: left;
+            background: var(--muted);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
         }
 
         .testimonial-header {
             display: flex;
+            gap: 12px;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #81c784 0%, #66bb6a 100%);
+        .testimonial .avatar {
+            width: 64px;
+            height: 64px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #fff;
-            font-weight: bold;
+            overflow: hidden;
+            flex-shrink: 0
         }
 
-        .testimonial-info h4 {
-            color: #3d8361;
-            margin-bottom: 5px;
+        .testimonial .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
         }
 
-        .stars {
-            color: #ffd700;
-            font-size: 1.2rem;
+        .testimonial-text {
+            flex: 1;
         }
 
         .testimonial p {
-            color: #666;
             font-style: italic;
+            color: #42514b;
+            margin-bottom: 12px;
             line-height: 1.6;
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 100px 0;
+        .testimonial strong {
+            color: var(--green);
+            display: block;
+            font-style: normal;
         }
 
-        .contact-content {
+        .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        .contact h2 {
-            font-size: 2.5rem;
-            color: #3d8361;
-            margin-bottom: 20px;
-        }
-
-        .contact-info {
-            background-color: #f5fbf6;
-            padding: 40px;
-            border-radius: 15px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .contact-icon {
-            font-size: 1.5rem;
-            color: #3d8361;
+            grid-template-columns: 1fr 420px;
+            gap: 28px;
+            align-items: start
         }
 
         form {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 12px
         }
 
         input,
-        textarea {
-            padding: 15px;
+        textarea,
+        select {
+            padding: 12px;
             border-radius: 10px;
-            border: 2px solid #e0e0e0;
-            font-size: 1rem;
+            border: 1px solid #e7efe9;
             font-family: inherit;
-            transition: border-color 0.3s;
+            font-size: 1rem;
+            resize: vertical;
+            width: 100%;
         }
 
         input:focus,
-        textarea:focus {
+        textarea:focus,
+        select:focus {
             outline: none;
-            border-color: #3d8361;
+            border-color: var(--green);
+            box-shadow: 0 6px 20px rgba(61, 131, 97, 0.06)
         }
 
-        textarea {
-            min-height: 150px;
-            resize: vertical;
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
         }
 
-        .success-message {
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-top: 4px;
+        }
+
+        .checkbox-group label {
+            font-size: 0.9rem;
+            color: #4b5650;
+        }
+
+        .success {
             display: none;
-            padding: 15px;
-            background-color: #c8e6c9;
-            color: #2e7d32;
-            border-radius: 10px;
-            margin-top: 20px;
-            text-align: center;
+            background: #e6f8ed;
+            color: var(--green);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(46, 101, 75, 0.08);
+            animation: pop .45s ease forwards;
+            margin-top: 6px
         }
 
-        /* Footer */
+        @keyframes pop {
+            from {
+                opacity: 0;
+                transform: translateY(8px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .contact-info-box {
+            background: linear-gradient(180deg, #fff, #fbfffb);
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow)
+        }
+
+        .contact-info-box h4 {
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+
+        .contact-info-box p {
+            color: #42514b;
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .contact-info-box hr {
+            border: none;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            margin: 12px 0
+        }
+
         .footer {
             background-color: #2e654b;
             color: #fff;
@@ -578,92 +603,115 @@
             color: rgba(255, 255, 255, 0.8);
         }
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .navbar ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background-color: #fff;
-                padding: 20px;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            }
+        .conditions-list {
+            background: #f8fff8;
+            padding: 16px;
+            border-radius: 10px;
+            margin-top: 16px;
+            border: 1px solid rgba(61, 131, 97, 0.06);
+        }
 
-            .navbar ul.active {
-                display: flex;
-            }
+        .conditions-list h4 {
+            color: var(--green);
+            margin-bottom: 12px;
+        }
 
-            .menu-toggle {
-                display: flex;
-            }
+        .conditions-list p {
+            color: #42514b;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
 
-            .hero-text h2 {
-                font-size: 2rem;
-            }
-
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 40px;
-            }
-
-            .about-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .contact-content {
+        @media (max-width:980px) {
+            .hero-grid {
                 grid-template-columns: 1fr;
+                gap: 26px
             }
 
-            .footer-content {
+            .about-grid {
                 grid-template-columns: 1fr;
-                text-align: center;
+                text-align: center
             }
 
-            .social-links {
-                justify-content: center;
+            .contact-grid {
+                grid-template-columns: 1fr
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
             }
         }
 
-        @media (max-width: 480px) {
-            .hero-text h2 {
+        @media (max-width:680px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 68px;
+                background: #fff;
+                padding: 18px;
+                border-top: 1px solid rgba(0, 0, 0, 0.04);
+                flex-direction: column;
+                gap: 8px
+            }
+
+            nav ul.open {
+                display: flex
+            }
+
+            .menu-toggle {
+                display: flex
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .hero-title {
                 font-size: 1.8rem;
             }
+        }
 
-            .hero-text p {
-                font-size: 1rem;
-            }
+        .animate {
+            opacity: 0;
+            transform: translateY(12px);
+            transition: all 700ms cubic-bezier(.2, .9, .3, 1)
+        }
 
-            .stat-item h3 {
-                font-size: 2rem;
-            }
+        .inview {
+            opacity: 1;
+            transform: translateY(0)
+        }
 
-            .about-text h2,
-            .services h2,
-            .process h2,
-            .testimonials h2,
-            .contact h2 {
-                font-size: 2rem;
-            }
+        .fade-left {
+            transform: translateX(-12px)
+        }
+
+        .fade-right {
+            transform: translateX(12px)
         }
     </style>
 </head>
 
 <body>
+
     <header>
         <div class="container">
-            <div class="header-content">
-                <h1 class="logo">HealthyLife Nutrition</h1>
-                <div class="menu-toggle" id="menuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+            <div class="header-inner">
+                <div class="logo" aria-label="HealthyLife Nutrition">
+                    <svg class="l1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="#3d8361" />
+                        <path d="M50 20 L50 50 L70 70" stroke="white" stroke-width="6" fill="none" />
+                    </svg>
+                    <span>HealthyLife Nutrition</span>
                 </div>
-                <nav class="navbar">
+
+                <nav aria-label="Main navigation">
                     <ul id="navMenu">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
@@ -673,239 +721,344 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </header>
 
     <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h2>Transform Your Health Through Nutrition</h2>
-                    <p>Personalized nutritional therapy plans designed to help you achieve optimal health and wellness.
-                    </p>
-                    <a href="#contact" class="btn">Book Your Free Consultation</a>
+        <div class="container hero-grid">
+            <div class="hero-left animate fade-right" data-anim>
+                <h1 class="hero-title">Ayurveda-Backed, Calorie-Aware Nutrition for Diabetes, Weight Loss & Lifestyle
+                    Disorders</h1>
+                <p class="hero-sub">Certified Ayurvedic Doctor & Diet Consultant • English • Hindi • Gujarati • Marathi
+                </p>
+
+                <div class="badges">
+                    <span class="badge">🗓️ 30-Day Complete Diet & Meal Plan</span>
+                    <span class="badge">✅ Eat & Avoid Lists</span>
+                    <span class="badge">📊 Personalised Diet Chart</span>
+                    <span class="badge">🍲 No-Hunger, Easy-to-Follow</span>
+                    <span class="badge">🩺 Full Health Assessment</span>
                 </div>
-                <div class="hero-image">
-                    <div class="hero-image-placeholder">🥗</div>
+
+                <div class="hero-cta">
+                    <a class="btn" href="#contact">Book First Consultation — ₹300</a>
+                    <a class="btn secondary" href="#contact">Enroll Monthly — ₹2,500</a>
+                    <a class="btn whatsapp"
+                        href="https://wa.me/917304654776?text=Hello%20Dr.%20Dhara%20Lakhani.%20I%20want%20to%20book%20the%20First%20Consultation%20(%E2%82%B9300)%20for%20an%20Ayurveda%20%2B%20calorie-aware%20diet%20plan."
+                        target="_blank">Message on WhatsApp: 7304654776</a>
                 </div>
+
+                <p class="ribbon">Result-oriented with high adherence • Typical wins in 30–90 days<br>
+                    Follow YouTube: <strong>Diet Yoga Ayurveda / Dr Dhara Lakhani</strong></p>
+            </div>
+
+            <div class="hero-image animate fade-left" data-anim>
+                <img loading="lazy" alt="Healthy plated meal and fresh vegetables"
+                    src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=1600&auto=format&fit=crop" />
             </div>
         </div>
     </section>
 
-    <section class="stats">
+    <section aria-hidden="false" class="stats" title="Achievements and stats">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>500+</h3>
-                    <p>Happy Clients</p>
+                    <h3>30,000+</h3>
+                    <p>Clients Guided</p>
                 </div>
                 <div class="stat-item">
-                    <h3>10+</h3>
+                    <h3>115,000+</h3>
+                    <p>Consultations Delivered</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15+</h3>
                     <p>Years Experience</p>
                 </div>
                 <div class="stat-item">
-                    <h3>95%</h3>
-                    <p>Success Rate</p>
-                </div>
-                <div class="stat-item">
-                    <h3>50+</h3>
-                    <p>Meal Plans Created</p>
+                    <h3>4</h3>
+                    <p>Languages (EN/HI/GU/MR)</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
+    <section id="about">
         <div class="container">
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="about-img-placeholder">👩‍⚕️</div>
+            <div class="about-grid">
+                <div class="about-card animate" data-anim>
+                    <img loading="lazy" alt="Dr Dhara Lakhani - Ayurvedic Doctor"
+                        src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1200&auto=format&fit=crop" />
                 </div>
-                <div class="about-text">
-                    <h2>Meet Your Nutritional Therapist</h2>
-                    <p>Hello! I'm a certified Nutritional Therapist with over 10 years of experience helping individuals
-                        transform their lives through personalized nutrition.</p>
-                    <p>My approach is holistic, evidence-based, and tailored to your unique needs. I believe that food
-                        is medicine, and with the right guidance, you can achieve remarkable improvements in your health
-                        and well-being.</p>
-                    <p>Whether you're looking to manage weight, boost energy, address digestive issues, or simply feel
-                        your best, I'm here to support you every step of the way.</p>
+
+                <div class="about-text animate" data-anim>
+                    <h2 class="section-title">Meet Dr. Dhara Lakhani — Ayurvedic Doctor & Diet Consultant</h2>
+                    <p>I help you heal with <strong>Ayurveda-based, calorie-aware nutrition</strong>—no starvation, easy
+                        to follow, and personalised to your routine. Over <strong>15+ years</strong>, I've guided
+                        thousands across diabetes, weight & obesity, PCOS/thyroid, fatty liver, acidity/constipation,
+                        cholesterol and more—<strong>in English, Hindi, Gujarati, and Marathi</strong>.</p>
 
                     <div class="certifications">
-                        <h4>Certifications & Qualifications:</h4>
+                        <h4>Certifications & Focus</h4>
                         <ul>
-                            <li>Certified Nutritional Therapist (CNT)</li>
-                            <li>Registered Dietitian Nutritionist</li>
-                            <li>Functional Medicine Practitioner</li>
-                            <li>Wellness Coach Certification</li>
+                            <li>• Certified <strong>Ayurvedic Doctor</strong></li>
+                            <li>• <strong>Diet & Nutrition Consultant</strong> (personalised charts, plate & timing)
+                            </li>
+                            <li>• <strong>Lifestyle & Habit Coaching</strong> (sleep, stress, routines)</li>
+                            <li>• <strong>Special focus:</strong> Diabetes, Weight/Fat loss, PCOS/Thyroid, Gut/Acidity,
+                                Fatty Liver, Cholesterol, Child & Sports Nutrition</li>
                         </ul>
                     </div>
+
+                    <div class="conditions-list">
+                        <h4>Suitable for (45+ areas)</h4>
+                        <p><strong>Metabolic & Endocrine:</strong> Diabetes, Prediabetes, Weight Management & Obesity,
+                            PCOS, Thyroid/Hypothyroid, Hypertension, Dyslipidemia/Cholesterol, Fatty Liver (NAFLD)</p>
+                        <p><strong>Gut & Digestion:</strong> GERD/Acidity, Constipation/IBS, Bloating, Gut Health</p>
+                        <p><strong>Women's Health:</strong> Menopause support, Fertility & Infertility (lifestyle),
+                            Pregnancy & Postpartum nutrition</p>
+                        <p><strong>Nutrients & Pain:</strong> Anemia (Iron/B12), Vitamin D deficiency, Gout/Uric Acid,
+                            Joint Pain/Arthritis (dietary)</p>
+                        <p><strong>Lifestyle & Others:</strong> Skin & Hair concerns, Migraine (dietary), Sleep & Stress
+                            lifestyle support, Child Nutrition & Picky Eating, Adolescent & Sports Nutrition, Vegetarian
+                            Protein Planning</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="services">
+    <section id="services">
         <div class="container">
-            <h2>My Services</h2>
+            <h2 class="section-title">Services</h2>
+            <p style="color:#47574f;margin-bottom:12px">Personalised Ayurveda + calorie-aware nutrition. Simple to
+                follow, no starvation. Available in <strong>English • Hindi • Gujarati • Marathi</strong>.</p>
+
             <div class="service-grid">
-                <div class="service-card">
-                    <div class="service-icon">🍎</div>
-                    <h3>Personalized Nutrition Plans</h3>
-                    <p>Custom meal plans designed specifically for your body, lifestyle, and health goals.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚖️</div>
-                    <h3>Weight Management</h3>
-                    <p>Sustainable strategies for healthy weight loss or gain, without restrictive dieting.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💪</div>
-                    <h3>Sports Nutrition</h3>
-                    <p>Optimize your athletic performance with nutrition plans tailored for your sport.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔬</div>
-                    <h3>Functional Testing</h3>
-                    <p>Advanced testing to identify nutritional deficiencies and metabolic imbalances.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🌱</div>
-                    <h3>Digestive Health</h3>
-                    <p>Address gut health issues including IBS, bloating, and food sensitivities.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">❤️</div>
-                    <h3>Disease Prevention</h3>
-                    <p>Nutritional strategies to prevent and manage chronic conditions like diabetes and heart disease.
-                    </p>
-                </div>
+                <article class="service-card animate" data-anim>
+                    <img loading="lazy" alt="Weight loss nutrition plan" src="Picture1.png" />
+                    <div class="service-card-content">
+                        <h3>Ayurveda Weight & Fat Loss (No-Hunger Plan)</h3>
+                        <p>Personalised 30-day diet chart with calorie-aware portions, satiety foods and weekly tweaks
+                            for safe, sustainable inch/weight loss.</p>
+                        <a href="#contact" class="btn" id="btn1">Start — ₹300 First Consult</a>
+                    </div>
+                </article>
+
+                <article class="service-card animate" data-anim>
+                    <img loading="lazy" alt="Diabetes and metabolic health" src="Picture2.jpg" />
+                    <div class="service-card-content">
+                        <h3>Diabetes & Metabolic Health</h3>
+                        <p>Diet for Diabetes/Prediabetes, Fatty Liver, Cholesterol & Hypertension. Low-GI plate, timing,
+                            and clear Eat & Avoid lists.</p>
+                        <a href="#contact" class="btn" id="btn1">Start — ₹300 First Consult</a>
+                    </div>
+                </article>
+
+                <article class="service-card animate" data-anim>
+                    <img loading="lazy" alt="Gut health and acidity reset" src="Picture3.png" />
+                    <div class="service-card-content">
+                        <h3>Gut & Acidity Reset (7–14 Days)</h3>
+                        <p>Warm, digestion-friendly meals with ginger/ajwain/jeera; routine & trigger audit to calm
+                            acidity, bloating and constipation/IBS.</p>
+                        <a href="#contact" class="btn" id="btn1">Learn More</a>
+                    </div>
+                </article>
+
+                <article class="service-card animate" data-anim>
+                    <img loading="lazy" alt="Monthly personalized diet plan" src="Picture4.jpg" />
+                    <div class="service-card-content">
+                        <h3>30-Day Personalised Diet Plan (Monthly Care ₹2,500)</h3>
+                        <p>Complete plan + Eat & Avoid list + yoga/exercise suggestions (no classes) + <strong>2
+                                consultations/month</strong> with progress tracking.</p>
+                        <a href="#contact" class="btn" id="btn1">Enroll — ₹2,500</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <section id="process" class="process">
+    <section id="process">
         <div class="container">
-            <h2>How It Works</h2>
+            <h2 class="section-title">Our 4-Step Process</h2>
+            <p style="color:#47574f;margin-bottom:18px">A simple, proven path to lasting health changes.</p>
+
             <div class="process-steps">
-                <div class="process-step">
+                <div class="process-step animate" data-anim>
                     <div class="step-number">1</div>
-                    <h3>Initial Consultation</h3>
-                    <p>We'll discuss your health history, goals, and lifestyle in a comprehensive 60-minute session.</p>
+                    <h4>Intake (₹300, 30–40 min)</h4>
+                    <p>History, goals, preferences, language; review meds/labs (if available).</p>
                 </div>
-                <div class="process-step">
+                <div class="process-step animate" data-anim>
                     <div class="step-number">2</div>
-                    <h3>Assessment</h3>
-                    <p>Optional functional testing and detailed analysis of your current nutritional status.</p>
+                    <h4>Assessment (Ayurveda + calorie bands)</h4>
+                    <p>Food patterns, dosha & digestion, routine & sleep; set practical portion targets.</p>
                 </div>
-                <div class="process-step">
+                <div class="process-step animate" data-anim>
                     <div class="step-number">3</div>
-                    <h3>Custom Plan</h3>
-                    <p>Receive a personalized nutrition plan with meal suggestions and supplement recommendations.</p>
+                    <h4>30-Day Personalised Plan</h4>
+                    <p>Diet chart + Eat & Avoid list, plate/timing guide, yoga/exercise suggestions (no classes).</p>
                 </div>
-                <div class="process-step">
+                <div class="process-step animate" data-anim>
                     <div class="step-number">4</div>
-                    <h3>Ongoing Support</h3>
-                    <p>Regular follow-ups to track progress, adjust your plan, and ensure lasting results.</p>
+                    <h4>Follow-up & Support (2 consults/month)</h4>
+                    <p>Progress review, tweaks, WhatsApp Q&A window, reminders to keep you on track.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="testimonials" class="testimonials">
+    <section id="testimonials">
         <div class="container">
-            <h2>What My Clients Say</h2>
+            <h2 class="section-title">What Clients Say</h2>
             <div class="testimonial-grid">
-                <div class="testimonial">
+
+                <div class="testimonial animate" data-anim>
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">SM</div>
-                        <div class="testimonial-info">
-                            <h4>Sarah Mitchell</h4>
-                            <div class="stars">★★★★★</div>
+                        <div class="avatar">
+                            <img loading="lazy" alt="Mr Omprakash testimonial"
+                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" />
+                        </div>
+                        <div class="testimonial-text">
+                            <strong>Mr Omprakash</strong>
+                            <p style="font-size:0.9rem;margin:0;font-style:normal;color:#666;">Lost 14 kg — without
+                                starvation</p>
                         </div>
                     </div>
-                    <p>"Working with HealthyLife Nutrition changed my life! I lost 30 pounds and finally have the energy
-                        to keep up with my kids. The personalized approach made all the difference."</p>
+                    <p>"Work, family and late dinners had pushed my weight up. With Dr. Dhara's Ayurveda + calorie-aware
+                        plan I learned what to eat, when, and how much. Simple plates, early light dinner, and weekly
+                        tweaks. In a few months I'm 14 kg down, feel lighter, and my clothes fit again. The best part—no
+                        pills, no crash diets."</p>
                 </div>
-                <div class="testimonial">
+
+                <div class="testimonial animate" data-anim>
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">JD</div>
-                        <div class="testimonial-info">
-                            <h4>James Davis</h4>
-                            <div class="stars">★★★★★</div>
+                        <div class="avatar">
+                            <img loading="lazy" alt="Mrs Reshma testimonial"
+                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&auto=format&fit=crop" />
+                        </div>
+                        <div class="testimonial-text">
+                            <strong>Mrs Reshma</strong>
+                            <p style="font-size:0.9rem;margin:0;font-style:normal;color:#666;">Down 16 kg • PCOD
+                                improved</p>
                         </div>
                     </div>
-                    <p>"As an athlete, I needed expert guidance on nutrition. The sports nutrition plan improved my
-                        performance significantly. I feel stronger and recover faster than ever."</p>
+                    <p>"Down 16 kg • PCOD improved • blood sugars normalised • and I conceived—without starving. In a
+                        few months I lost 16 kg, my periods became more regular, my sugar readings improved (as per my
+                        doctor's reports) and later I conceived. Thank you, Dr. Dhara, for guiding me patiently and
+                        changing my life."</p>
                 </div>
-                <div class="testimonial">
+
+                <div class="testimonial animate" data-anim>
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">EP</div>
-                        <div class="testimonial-info">
-                            <h4>Emily Parker</h4>
-                            <div class="stars">★★★★★</div>
+                        <div class="avatar">
+                            <img loading="lazy" alt="Client testimonial"
+                                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop" />
+                        </div>
+                        <div class="testimonial-text">
+                            <strong>Sarah J.</strong>
                         </div>
                     </div>
-                    <p>"After years of digestive issues, I finally found relief. The functional testing identified my
-                        food sensitivities, and the customized plan has been life-changing!"</p>
+                    <p>"Working together changed my relationship with food. I have more energy and a plan that actually
+                        fits my life."</p>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <section id="contact">
         <div class="container">
-            <div class="contact-content">
-                <div>
-                    <h2>Get In Touch</h2>
-                    <p style="margin-bottom: 30px; color: #555;">Ready to start your journey to better health? Book your
-                        free consultation today!</p>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <span class="contact-icon">📞</span>
-                            <div>
-                                <strong>Phone</strong><br>
-                                +1 (555) 123-4567
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">✉️</span>
-                            <div>
-                                <strong>Email</strong><br>
-                                hello@healthylifenutrition.com
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <div>
-                                <strong>Location</strong><br>
-                                123 Wellness Street<br>
-                                Health City, HC 12345
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">🕐</span>
-                            <div>
-                                <strong>Hours</strong><br>
-                                Mon-Fri: 9:00 AM - 6:00 PM<br>
-                                Sat: 10:00 AM - 2:00 PM
-                            </div>
-                        </div>
+            <h2 class="section-title">Contact & Bookings</h2>
+            <p style="color:#47574f;margin-bottom:10px">Book your First Consultation (₹300, 30–40 min). Fill the quick
+                form and pick a slot.</p>
+
+            <div class="contact-grid">
+                <form id="contactForm" class="animate" data-anim aria-label="Contact form">
+                    <div class="form-row">
+                        <input type="text" id="name" name="name" placeholder="Your Name*" required />
+                        <input type="email" id="email" name="email" placeholder="Email address*" required />
                     </div>
-                </div>
-                <div>
-                    <form id="contactForm">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <input type="tel" name="phone" placeholder="Your Phone Number">
-                        <textarea name="message" placeholder="Tell me about your health goals..." required></textarea>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                    <div id="successMessage" class="success-message">
-                        Thank you for your message! I'll get back to you within 24 hours.
+
+                    <div class="form-row">
+                        <input type="tel" id="phone" name="phone" placeholder="Phone / WhatsApp* (+91)" required />
+                        <select id="language" name="language" required>
+                            <option value="">Preferred language*</option>
+                            <option value="English">English</option>
+                            <option value="Hindi">Hindi</option>
+                            <option value="Gujarati">Gujarati</option>
+                            <option value="Marathi">Marathi</option>
+                        </select>
                     </div>
-                </div>
+
+                    <select id="health_goal" name="health_goal" required>
+                        <option value="">Primary health goal*</option>
+                        <option value="Weight management">Weight management</option>
+                        <option value="Diabetes/Prediabetes">Diabetes/Prediabetes</option>
+                        <option value="PCOS/Thyroid">PCOS/Thyroid</option>
+                        <option value="Fatty liver/Cholesterol">Fatty liver/Cholesterol</option>
+                        <option value="Acidity/Constipation/IBS">Acidity/Constipation/IBS</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <select id="labs" name="labs">
+                        <option value="">Have labs/meds to share?</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+
+                    <textarea id="message" name="message" placeholder="Brief message (optional)" rows="4"></textarea>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="consent" name="consent" required />
+                        <label for="consent">I agree to be contacted on WhatsApp/email and I accept the booking & refund
+                            policy.*</label>
+                    </div>
+
+                    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                        <button class="btn" type="submit">Pay ₹300 & Book</button>
+                        <!-- <a class="btn whatsapp"
+                            href="https://wa.me/917304654776?text=Hello%20Dr.%20Dhara%20Lakhani.%20I%20want%20to%20book%20the%20First%20Consultation%20(%E2%82%B9300)%20for%20an%20Ayurveda%20%2B%20calorie-aware%20diet%20plan."
+                            target="_blank">Message on WhatsApp</a> -->
+
+                        <a class="btn whatsapp"
+                            href="https://wa.me/917304654776?text=Hello%20Dr.%20Dhara%20Lakhani.%20I%20want%20to%20book%20the%20First%20Consultation%20(%E2%82%B9300)%20for%20an%20Ayurveda%20%2B%20calorie-aware%20diet%20plan."
+                            target="_blank">
+                            Message on WhatsApp: 7304654776
+                        </a>
+
+                        <button class="btn secondary" type="button" onclick="scrollToSection('process')">Learn How It
+                            Works</button>
+                    </div>
+
+                    <div id="success" class="success" role="status" aria-live="polite">Thanks! Your message has been
+                        received. We'll contact you within 48 hours.</div>
+                </form>
+
+                <aside class="contact-info animate" data-anim>
+                    <div class="contact-info-box">
+                        <h4>Contact Information</h4>
+                        <p><strong>WhatsApp/Call:</strong> +91 73046 54776</p>
+                        <p><strong>Email:</strong> dietyogaayurveda@gmail.com</p>
+                        <p><strong>Location:</strong> India</p>
+                        <hr />
+                        <p><strong>Hours:</strong> Mon–Fri 9am–6pm • Sat 10am–2pm</p>
+                        <p><strong>Note:</strong> First Consultation is <strong>₹300 (30–40 min)</strong>. If you enroll
+                            within 7 days, it's <strong>adjusted in your first month</strong>.</p>
+                        <hr />
+                        <h4>Refund & Reschedule:</h4>
+                        <p>Our cancellation → 100% refund. Client no-show or reschedule 12h → non-refundable. One free
+                            reschedule ≥12h.</p>
+                        <hr />
+                        <p style="font-size:0.9rem;"><strong>Medical safety:</strong> Nutrition & lifestyle
+                            guidance by a Certified Ayurvedic Doctor & Diet Consultant. Not a substitute for
+                            emergency care.</p>
+                    </div>
+                </aside>
             </div>
         </div>
     </section>
@@ -915,47 +1068,130 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>HealthyLife Nutrition</h3>
-                    <p>Empowering you to achieve optimal health through personalized nutritional therapy.</p>
+                    <p>Empowering you to achieve optimal health through personalized Ayurvedic nutrition therapy.</p>
+                    <p style="margin-top:12px;"><strong>Dr. Dhara Lakhani</strong><br>Ayurvedic Doctor & Diet Consultant
+                    </p>
                     <div class="social-links">
-                        <a href="#" class="social-icon">f</a>
-                        <a href="#" class="social-icon">in</a>
-                        <a href="#" class="social-icon">ig</a>
-                        <a href="#" class="social-icon">tw</a>
+                        <a href="#" class="social-icon" aria-label="Facebook">f</a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">ig</a>
+                        <a href="https://www.youtube.com/@DietYogaAyurveda" class="social-icon" aria-label="YouTube"
+                            target="_blank">yt</a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#about">About Dr. Dhara</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#process">Our Process</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Services</h3>
+                    <h3>Our Services</h3>
                     <ul>
-                        <li><a href="#services">Nutrition Plans</a></li>
-                        <li><a href="#services">Weight Management</a></li>
-                        <li><a href="#services">Sports Nutrition</a></li>
-                        <li><a href="#services">Functional Testing</a></li>
+                        <li><a href="#services">Weight & Fat Loss Plans</a></li>
+                        <li><a href="#services">Diabetes Management</a></li>
+                        <li><a href="#services">Gut & Acidity Reset</a></li>
+                        <li><a href="#services">PCOS/Thyroid Support</a></li>
+                        <li><a href="#services">Monthly Care Program</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to receive health tips and nutrition advice.</p>
-                    <form style="margin-top: 15px;">
-                        <input type="email" placeholder="Your email" style="width: 100%; margin-bottom: 10px;">
-                        <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
-                    </form>
+                    <h3>Get Started</h3>
+                    <p>Ready to transform your health with Ayurveda-based nutrition?</p>
+                    <a href="#contact" class="btn" style="margin-top: 15px; display: inline-block;">Book First
+                        Consultation — ₹300</a>
+                    <p style="margin-top:15px;font-size:0.9rem;">Follow us on YouTube:<br><strong>Diet Yoga Ayurveda /
+                            Dr Dhara Lakhani</strong></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 HealthyLife Nutrition. All rights reserved. | Privacy Policy | Terms of Service</p>
+                <p>&copy; 2025 HealthyLife Nutrition - Dr. Dhara Lakhani. All rights reserved.</p>
+                <p style="margin-top:8px;font-size:0.9rem;">Nutrition & lifestyle guidance by a Certified Ayurvedic
+                    Doctor & Diet Consultant. Not a substitute for emergency care. Medication/lab decisions remain with
+                    your physician.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
+        document.querySelectorAll('.btn.whatsapp').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault(); // stop opening old href
+
+                const lang = document.getElementById('language')?.value || 'English';
+                const msg = `Hello Dr. Dhara Lakhani, I want to book the First Consultation (₹300) for an Ayurveda + calorie-aware diet plan. Language: ${lang}`;
+                const link = `https://api.whatsapp.com/send?phone=917304654776&text=${encodeURIComponent(msg)}`;
+
+                // Open manually so message is always drafted
+                window.open(link, '_blank');
+            });
+        });
+
+
+
         const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        menuToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('open');
+            menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('inview');
+                    entry.target.classList.remove('animate');
+                }
+            });
+        }, { threshold: 0.18 });
+
+        document.querySelectorAll('[data-anim]').forEach(el => observer.observe(el));
+
+        const contactForm = document.getElementById('contactForm');
+        const successBox = document.getElementById('success');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = contactForm.name.value.trim();
+            const email = contactForm.email.value.trim();
+            const phone = contactForm.phone.value.trim();
+            const language = contactForm.language.value;
+            const healthGoal = contactForm.health_goal.value;
+            const consent = contactForm.consent.checked;
+
+            if (!name || !email || !phone || !language || !healthGoal || !consent) {
+                alert('Please fill out all required fields and accept the consent.');
+                return;
+            }
+
+            successBox.style.display = 'block';
+            contactForm.reset();
+
+            setTimeout(() => {
+                successBox.style.display = 'none';
+            }, 6000);
+        });
+
+        document.querySelectorAll('#navMenu a').forEach(a => {
+            a.addEventListener('click', () => {
+                if (navMenu.classList.contains('open')) {
+                    navMenu.classList.remove('open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
